@@ -1,0 +1,6 @@
+rpi_hosts:
+  hosts:
+    Pi-hole:
+      ansible_host: raspberrypi3
+    Home_Server:
+      ansible_host: raspberrypi4
