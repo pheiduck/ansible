@@ -1,15 +1,14 @@
 - name: Manjaro Linux Upgrade
   hosts: rpi_hosts
   gather_facts: false
+  become: true
 
 
   tasks:
     - name: Upgrade packages
-      become: true
       shell:
           "pacman-mirrors -f; pacman -Syyuu --noconfirm"
 
     - name: Remove obsolete packages
-      become: true
       shell:
           "pacman -Rcns $(pacman -Qdtq) --noconfirm || true"
